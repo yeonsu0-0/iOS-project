@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21219" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_9" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21200"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="JDR-Fp-kxb">
+                                <rect key="frame" x="0.0" y="-50" width="812" height="425"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="dice png" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-xB-gWa">
+                                <rect key="frame" x="306" y="37.666666666666657" width="200" height="200"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play with your friends!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-Z6-9A2">
+                                <rect key="frame" x="322" y="267.66666666666669" width="168" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gH7-Z6-9A2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1oW-3P-Cdv"/>
+                            <constraint firstItem="JDR-Fp-kxb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1sX-LY-C4h"/>
+                            <constraint firstItem="JDR-Fp-kxb" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-50" id="GAx-nl-BuN"/>
+                            <constraint firstAttribute="bottom" secondItem="JDR-Fp-kxb" secondAttribute="bottom" id="HZK-4R-vgj"/>
+                            <constraint firstItem="JDR-Fp-kxb" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="P2f-Ri-usF"/>
+                            <constraint firstItem="gH7-Z6-9A2" firstAttribute="top" secondItem="KIK-xB-gWa" secondAttribute="bottom" constant="30" id="RoZ-AP-Vrt"/>
+                            <constraint firstItem="KIK-xB-gWa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-50" id="Z2N-xD-iBU"/>
+                            <constraint firstItem="KIK-xB-gWa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="pyc-EM-CfR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="375" height="812"/>
+        <image name="dice png" width="200" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
