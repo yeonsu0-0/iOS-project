@@ -58,6 +58,7 @@
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="240" id="aJm-fv-bdO"/>
+                                                        <constraint firstAttribute="height" constant="1" id="aNb-It-p7G"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OM-c1-ftI" userLabel="Delete Button">
