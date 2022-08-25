@@ -37,7 +37,7 @@ struct Todo: Codable, Equatable {
 // 데이터를 관리할 클래스(Todo 객체를 관리할 객체)
 // 해야할 일이 여러개일 경우 이를 관리하는 객체가 따로 존재하는 것이 유지보수에 용이
 
-// 🟣 TodoManager은 TodoViewModel에서 사용하게 되고, TodoViewModel은 ViewController에서 사용하게 된다
+// TodoManager은 TodoViewModel에서 사용하게 되고, TodoViewModel은 ViewController에서 사용하게 된다
 
 class TodoManager {
     
@@ -105,3 +105,57 @@ class TodoManager {
     }
     
 }
+
+
+class TodoViewModel {
+    
+    // 화면: Today / Upcoming 섹션 구분
+    enum Section: Int, CaseIterable {
+        case today
+        case upcoming
+        
+        var title: String {
+            switch self {
+            case .today: return "Today"
+            default: return "Upcoming"
+            }
+        }
+    }
+    // 📌
+    // TodoManager를 적극 활용하기 때문에 shared를 변수로 선언
+    private let manager = TodoManager.shared
+
+    var todos: [Todo] {
+        return manager.todos
+    }
+
+    var todayTodos: [Todo] {
+        return todos.filter {$0.isToday == true}
+    }
+    
+    var upcomingTodos: [Todo] {
+        return todos.filter {$0.isToday == false}
+    }
+    
+    var numOfSection: Int {
+        return Section.allCases.count
+    }
+    
+    func addTodo(_ todo: Todo) {
+        manager.addTodo(todo)
+    }
+    
+    func deleteTodo(_ todo: Todo) {
+        manager.deleteTodo(todo)
+    }
+    
+    func updateTodo(_ todo: Todo) {
+        manager.updateTodo(todo)
+    }
+    
+    func loadTasks() {
+        manager.retrieveTodo()
+    }
+
+}
+
