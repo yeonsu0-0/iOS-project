@@ -9,17 +9,91 @@ import UIKit
 
 class TodoListViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var inputTextField: UITextField!
     
+    @IBOutlet weak var isTodayButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
     
-    
+    //TODO: TodoViewModel 만들기
+    let todoListViewModel = TodoViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //TODO: 키보드 디텍션
+        
+        //TODO: 데이터 불러오기
+        todoListViewModel.loadTasks()
     }
 
+    
 
+    @IBAction func isTodayButtonTapped(_ sender: Any) {
+        //TODO: 투데이 버튼 토글 작업
+    }
+    
+    
+    @IBAction func addTaskButtonTapped(_ sender: Any) {
+        //TODO: Task 추가
+        //add task to view model
+        //and tableview reload or update
+    }
+    
+    //TODO: background tap했을 때 키보드 내려오게 하기
 }
+
+
+// ===== 📌
+// UICollectionViewDataSource
+// 컬렉션뷰의 데이터를 관리하고 해당 데이터를 표현하는데 필요한 화면을 구현함
+
+extension TodoListViewController: UICollectionViewDataSource {
+    //TODO: 섹션의 갯수
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    //TODO: 섹션별 아이템의 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    //TODO: custom cell
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        // TODO: 커스텀 셀
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoListCell", for: indexPath) as? TodoListCell else {
+            return UICollectionViewCell()
+        }
+        return cell
+    }
+    
+    //TODO: todo를 이용해서 updateUI
+    //TODO: doneButtonHandler 작성
+    //TODO: deleteButtonHandler 작성
+    
+    //헤더뷰
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TodoListHeaderView", for: indexPath) as? TodoListHeaderView else {
+                return UICollectionReusableView()
+            }
+            
+            guard let section = TodoViewModel.Section(rawValue: indexPath.section) else {
+                return UICollectionReusableView()
+            }
+            
+            header.sectionTitleLabel.text = section.title
+            return header
+        default:
+            return UICollectionReusableView()
+        }
+    }
+}
+
 
 class TodoListCell: UICollectionViewCell {
     
