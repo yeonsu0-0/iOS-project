@@ -46,35 +46,53 @@ class TodoListViewController: UIViewController {
 }
 
 
-// ===== 📌
+// // ================ 📌 이해 안 되는 부분 ================
+
 // UICollectionViewDataSource
 // 컬렉션뷰의 데이터를 관리하고 해당 데이터를 표현하는데 필요한 화면을 구현함
 
 extension TodoListViewController: UICollectionViewDataSource {
     //TODO: 섹션의 갯수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return todoListViewModel.numOfSection
     }
     //TODO: 섹션별 아이템의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if section == 0 {
+            return todoListViewModel.todayTodos.count
+        } else {
+            return todoListViewModel.upcomingTodos.count
+        }
     }
     
     //TODO: custom cell
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // TODO: 커스텀 셀
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoListCell", for: indexPath) as? TodoListCell else {
             return UICollectionViewCell()
         }
+        
+        var todo : Todo
+        if indexPath.section == 0 {
+            todo = todoListViewModel.todayTodos[indexPath.item]
+        }else {
+            todo = todoListViewModel.upcompingTodos[indexPath.item]
+        }
+        
+        cell.updateUI(todo: todo)
+        //TODO: custom cell
+        //TODO: todo를 이용해서 updateUI
+        //TODO: doneButtonHandler 작성
+        //TODO: deleteButtonHandler 작성
+        
         return cell
+
     }
     
-    //TODO: todo를 이용해서 updateUI
-    //TODO: doneButtonHandler 작성
-    //TODO: deleteButtonHandler 작성
+    // HeaderView
+    // UICollectionReusableView
     
-    //헤더뷰
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
@@ -93,6 +111,19 @@ extension TodoListViewController: UICollectionViewDataSource {
         }
     }
 }
+
+//UICollectionViewDelegateFlowLayout
+
+extension TodoListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // TODO: 사이즈 계산하기
+        let width: CGFloat = collectionView.bounds.width
+        let height: CGFloat =  50
+        return CGSize(width: width, height: height)
+    }
+}
+// ================================================
+
 
 
 class TodoListCell: UICollectionViewCell {
