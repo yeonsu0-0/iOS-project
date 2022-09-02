@@ -9,6 +9,12 @@ import Foundation
 
 
 // 사용할 데이터의 형식을 struct로 선언
+// 셀을 업데이트 할 때 사용하는 아이템: Todo -> isDone 선택 여부를 나타내는 프로퍼티 존재
+
+// 📌 프로토콜 
+// Codable: json 저장
+// Equatable: == 연산자 오버로딩 사용
+
 struct Todo: Codable, Equatable {
     let id: Int
     var isDone: Bool
