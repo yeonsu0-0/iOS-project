@@ -15,6 +15,8 @@ import Foundation
 // Codable: json 저장
 // Equatable: == 연산자 오버로딩 사용
 
+// Codable을 이용해서 swift 메모리에 있는 데이터 형태를 json으로 바꾸는 것이 가능 -> json 파일을 디스크에 Read/Write하는 작업을 Storage에서 수행
+
 struct Todo: Codable, Equatable {
     let id: Int
     var isDone: Bool
@@ -98,6 +100,11 @@ class TodoManager {
     
     // 📌
     // todos에 저장된 데이터를 json파일로 저장하는 메서드
+    
+    // TodoManager에서는 add, delete, update를 하게 되면 saveTodo()를 호출해서 디스크와 싱크를 하게 된다
+    
+    // saveTodo()의 역할
+    // todos 데이터 리스트를 받아서 json으로 쓴다
     func saveTodo() {
         Storage.store(todos, to: .documents, as: "todos.json")
     }
