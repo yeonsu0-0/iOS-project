@@ -11,6 +11,7 @@ class TodoListViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
+    // text view를 클릭할 경우 키패드 만큼 view bottom이 올라가야 하기 때문에 지정
     @IBOutlet weak var inputTextField: UITextField!
     
     @IBOutlet weak var isTodayButton: UIButton!
@@ -19,11 +20,22 @@ class TodoListViewController: UIViewController {
     //TODO: TodoViewModel 만들기
     let todoListViewModel = TodoViewModel()
     
+    
+    
+    // 📌 키보드 디텍션 구현
+    // 키보드가 올라오고 내려가는 것을 관찰
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+    // observer(관찰자): TodoListViewController 스스로
+    // selector: 관찰이 되면 어떤 메소드를 실행할 것인지 선택
+    // name: 관찰하고자 하는 이벤트의 이름 -> UIResponder.keyboardWillShowNotificationobject: nil로 지정
+
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        //  관찰을 self 가하고 UIResponder.keyboardWillShowNotification가 감지되면 selector 메소드 실행
         
-        //TODO: 키보드 디텍션
+        
         
         //TODO: 데이터 불러오기
         todoListViewModel.loadTasks()
@@ -33,6 +45,8 @@ class TodoListViewController: UIViewController {
 
     @IBAction func isTodayButtonTapped(_ sender: Any) {
         //TODO: 투데이 버튼 토글 작업
+        // 버튼을 누르는 행위: 눌리는 상태를 저장할 변수(outlet)와 누르는 행위(action)이 존재
+        isTodayButton.isSelected = !isTodayButton.isSelected
     }
     
     
@@ -44,6 +58,33 @@ class TodoListViewController: UIViewController {
     
     //TODO: background tap했을 때 키보드 내려오게 하기
 }
+
+
+// detection한 키보드 높이에 따른 인풋뷰 위치 변경 기능 구현
+extension TodoListViewController {
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+        
+        
+        // noti: 감지한 내용
+        // 키보드 프레임 정보(키보드의 위치와 사이즈): userInfo[UIResponder.keyboardFrameEndUserInfoKey]
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as?  NSValue)?.cgRectValue else {return}
+        
+        // iPhone의 safeArea만큼 Height 값 빼줌
+        // keyboardFrame.height - view.safeAreaInsets.bottom
+        if noti.name == UIResponder.keyboardWillShowNotification{
+            let adjusmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjusmentHeight
+        }else{
+            inputViewBottom.constant = 0 // 키보드가 사라질 때는 다시 0으로 초기화
+        }
+                
+        print("--> Keyboard End Frame : \(keyboardFrame)")
+        
+    }
+}
+
 
 
 // ================ 📌 이해 안 되는 부분 ================
@@ -77,7 +118,7 @@ extension TodoListViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             todo = todoListViewModel.todayTodos[indexPath.item]
         }else {
-            todo = todoListViewModel.upcompingTodos[indexPath.item]
+            todo = todoListViewModel.upcomingTodos[indexPath.item]
         }
         
         cell.updateUI(todo: todo)
@@ -236,4 +277,14 @@ class TodoListCell: UICollectionViewCell {
         deleteButtonTapHandler?()
     }
 }
+
+class TodoListHeaderView: UICollectionReusableView {
+    
+    @IBOutlet weak var sectionTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
+
 
