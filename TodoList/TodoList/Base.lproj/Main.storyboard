@@ -165,11 +165,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JCR-pZ-DfE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="tKb-8c-pBB" firstAttribute="centerX" secondItem="Mix-yV-bBB" secondAttribute="centerX" id="9vI-14-zj4"/>
                             <constraint firstItem="tKb-8c-pBB" firstAttribute="centerY" secondItem="Mix-yV-bBB" secondAttribute="centerY" id="Mfp-hF-edK"/>
                             <constraint firstItem="JCR-pZ-DfE" firstAttribute="bottom" secondItem="tKb-8c-pBB" secondAttribute="bottom" id="ylN-k3-sjN" userLabel="Input View Bottom"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wjh-8e-Yt7" appends="YES" id="RkS-Sb-1dn"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Todo" image="checkmark.circle.fill" catalog="system" id="Jrt-9j-ojk">
                         <color key="badgeColor" systemColor="systemPinkColor"/>
@@ -177,6 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxe-KW-caS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="FjY-9D-hJD" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="wjh-8e-Yt7"/>
             </objects>
             <point key="canvasLocation" x="-2087.1999999999998" y="662.807881773399"/>
         </scene>

@@ -32,6 +32,9 @@ class TodoListViewController: UIViewController {
     // selector: 관찰이 되면 어떤 메소드를 실행할 것인지 선택
     // name: 관찰하고자 하는 이벤트의 이름 -> UIResponder.keyboardWillShowNotificationobject: nil로 지정
 
+        //NotificationCenter.default.addObserver를 통해 올라오는 키패드 관찰
+        
+        //키패드가 올라오거나 내려갈 경우 adjustInputView 호출
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         //  관찰을 self 가하고 UIResponder.keyboardWillShowNotification가 감지되면 selector 메소드 실행
         
@@ -56,7 +59,15 @@ class TodoListViewController: UIViewController {
         //and tableview reload or update
     }
     
+    
     //TODO: background tap했을 때 키보드 내려오게 하기
+    // Tap Gesture Recognizer: 키패드와 Textfield를 제외한 부분을 눌렀을 때 키패드를 내림 -> Tap Gesture Recognizer를 object Library를 전체 View에 삽입
+
+    // inputTextField.resignFirstResponder(): 현재 First하게 응답하는 것이 Textfield이기 때문에 집중되어 있는 상태를 resign한다는 기능(textfield가 우선 순위에서 내려감)
+    
+    @IBAction func tapBG(_ sender: Any) {
+        inputTextField.resignFirstResponder()
+    }
 }
 
 
