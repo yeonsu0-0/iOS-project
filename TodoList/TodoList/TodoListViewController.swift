@@ -7,16 +7,22 @@
 
 import UIKit
 
+
+
 class TodoListViewController: UIViewController {
 
+    
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     // text view를 클릭할 경우 키패드 만큼 view bottom이 올라가야 하기 때문에 지정
     @IBOutlet weak var inputTextField: UITextField!
     
     @IBOutlet weak var isTodayButton: UIButton!
-    @IBOutlet weak var addButton: UIButton!
+
     
+    @IBOutlet weak var addButton: UIButton!
     //TODO: TodoViewModel 만들기
     let todoListViewModel = TodoViewModel()
     
@@ -57,6 +63,23 @@ class TodoListViewController: UIViewController {
         //TODO: Task 추가
         //add task to view model
         //and tableview reload or update
+        
+        // MARK: add (+) 버튼이 눌렸을 때 할 일
+        /*
+         1. TextField에 text 존재 여부 판단
+         2. createTodo 호출 -> todo 객체 생성
+         3. todoListViewModel에 더하기
+         4. collectionView reload -> ViewModel에 있는 추가된 데이터들이 CollectionView에 표시
+         5. inputTextView, isTodayButton을 default값으로 리셋
+         */
+        
+        guard let detail = inputTextField.text, detail.isEmpty == false else {return}
+        
+        let todo = TodoManager.shared.createTodo(detail: detail, isToday: isTodayButton.isSelected)
+        todoListViewModel.addTodo(todo)
+        collectionView.reloadData()
+        inputTextField.text = ""
+        isTodayButton.isSelected = false
     }
     
     
@@ -110,13 +133,14 @@ extension TodoListViewController: UICollectionViewDataSource {
     }
     //TODO: 섹션별 아이템의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
+        // TODO: 섹션별 아이템 몇개
+        if section == 0{
             return todoListViewModel.todayTodos.count
-        } else {
+        }else{
             return todoListViewModel.upcomingTodos.count
         }
-    }
     
+    }
     //TODO: custom cell
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -135,8 +159,18 @@ extension TodoListViewController: UICollectionViewDataSource {
         cell.updateUI(todo: todo)
         //TODO: custom cell
         //TODO: todo를 이용해서 updateUI
+        
         //TODO: doneButtonHandler 작성
         //TODO: deleteButtonHandler 작성
+        cell.doneButtonTapHandler = { isDone in todo.isDone = isDone
+            self.todoListViewModel.updateTodo(todo)
+            self.collectionView.reloadData()
+        }
+        
+        cell.deleteButtonTapHandler = {
+            self.todoListViewModel.deleteTodo(todo)
+            self.collectionView.reloadData()
+        }
         
         return cell
 

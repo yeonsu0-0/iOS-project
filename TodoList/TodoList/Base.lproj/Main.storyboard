@@ -130,9 +130,6 @@
                                             <imageReference key="image" image="plus.app" catalog="system" symbolScale="small"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="36" scale="small" weight="light"/>
                                         </buttonConfiguration>
-                                        <connections>
-                                            <action selector="addTaskButtonTapped:" destination="FjY-9D-hJD" eventType="touchUpInside" id="X2v-ux-rPG"/>
-                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="할 일을 적어보세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-ET-4ra" userLabel="Input Text field">
                                         <rect key="frame" x="24" y="13" width="214" height="34"/>
@@ -149,11 +146,6 @@
                                         <state key="normal" title="Today">
                                             <color key="titleColor" systemColor="systemGray2Color"/>
                                         </state>
-                                        <connections>
-                                            <action selector="isTodayButton" destination="FjY-9D-hJD" eventType="touchUpInside" id="aYk-5j-yFl"/>
-                                            <action selector="isTodayButton:" destination="FjY-9D-hJD" eventType="touchUpInside" id="wyv-iw-SiS"/>
-                                            <action selector="isTodayButtonTapped:" destination="FjY-9D-hJD" eventType="touchUpInside" id="1xe-nS-l3O"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -180,7 +172,6 @@
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxe-KW-caS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="FjY-9D-hJD" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="wjh-8e-Yt7"/>
             </objects>
             <point key="canvasLocation" x="-2087.1999999999998" y="662.807881773399"/>

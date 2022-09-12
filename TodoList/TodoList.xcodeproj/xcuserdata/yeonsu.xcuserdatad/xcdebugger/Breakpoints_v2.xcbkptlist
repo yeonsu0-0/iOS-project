@@ -7,125 +7,109 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45"
-            shouldBeEnabled = "No"
+            uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TodoList/TodoListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
-            landmarkName = "TodoListCell"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "TodoListViewController"
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - 97da629dfb5a4880"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - 917dcc9ce5ccf27e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.strikeThroughView.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "TodoList.TodoListViewController.addButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "85">
                </Location>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - 9bf828e335bcac74"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - f8511fbc83bc8262"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.strikeThroughView.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "TodoList.TodoListViewController.addButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "136">
                </Location>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - 47d1a2fba829d187"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - 50bcb4d01dd41673"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.strikeThroughView.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  symbolName = "TodoList.TodoListViewController.addButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "0">
                </Location>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - abd7c5feeedea5cc"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - 92884e4afc7412fa"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.strikeThroughView.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "TodoList.TodoListViewController.addButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "26">
                </Location>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - 8965ae56d68b6701"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - 58ee94e6e76e84c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.init(frame: __C.CGRect) -&gt; TodoList.TodoListCell"
+                  symbolName = "TodoList.TodoListViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TodoList.TodoListViewController"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "348">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "341">
                </Location>
                <Location
-                  uuid = "525106F6-D1E2-42A2-9227-C756E0F89F45 - 70e1d6ae6e7c48d"
+                  uuid = "5E3CD44F-DD66-478F-8BE4-AAAA0EFB93F6 - 1db33696d897364b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TodoList.TodoListCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TodoList.TodoListCell&gt;"
+                  symbolName = "TodoList.TodoListViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TodoList.TodoListViewController&gt;"
                   moduleName = "TodoList"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/yeonsu/iOS-project/TodoList/TodoList/TodoListViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "243">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "298">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8B984459-489D-4935-A5E9-2F78D8BA08E6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TodoList/ToDo.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "deleteTodo(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
