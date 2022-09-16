@@ -96,11 +96,12 @@
                                             <outlet property="checkButton" destination="Ygc-QN-aSf" id="B1b-Bb-LoP"/>
                                             <outlet property="deleteButton" destination="3OM-c1-ftI" id="lnW-Zn-L3O"/>
                                             <outlet property="descriptionLabel" destination="4Be-sd-E2T" id="NCV-fD-nE9"/>
+                                            <outlet property="strikeThroughView" destination="Md5-KV-GHs" id="n0e-zT-zhn"/>
                                             <outlet property="strikeThroughWidth" destination="aJm-fv-bdO" id="zWW-4r-jLb"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoListHeaderView" id="yIa-KR-gt0" customClass="TodoListHeaderView">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TodoListHeaderView" id="yIa-KR-gt0" customClass="TodoListHeaderView" customModule="TodoList" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
@@ -118,6 +119,9 @@
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fo0-ws-HoS" secondAttribute="trailing" constant="20" symbolic="YES" id="dKg-IV-P4m"/>
                                         <constraint firstItem="fo0-ws-HoS" firstAttribute="top" secondItem="yIa-KR-gt0" secondAttribute="topMargin" constant="5" id="wJH-LD-P9H"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="sectionTitleLabel" destination="fo0-ws-HoS" id="mJ1-ds-MTd"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="Rfq-bh-Gb9" id="V62-0f-Pj4"/>
