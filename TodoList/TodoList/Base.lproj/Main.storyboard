@@ -13,7 +13,7 @@
         <!--Todo-->
         <scene sceneID="Pnt-Me-mkD">
             <objects>
-                <viewController title="Todo" id="Rfq-bh-Gb9" sceneMemberID="viewController">
+                <viewController title="Todo" id="Rfq-bh-Gb9" customClass="TodoListViewController" customModule="TodoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mix-yV-bBB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,9 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                                     </state>
                                                     <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="checkButtonTapped:" destination="EY6-Zp-08V" eventType="touchUpInside" id="wId-1D-CR0"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Md5-KV-GHs" userLabel="Strike Through View">
                                                     <rect key="frame" x="67.666666666666686" y="44" width="240" height="2"/>
@@ -71,6 +74,9 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="18"/>
                                                     </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="deleteButtonTapped:" destination="EY6-Zp-08V" eventType="touchUpInside" id="Kgl-iF-JTh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -90,7 +96,6 @@
                                             <outlet property="checkButton" destination="Ygc-QN-aSf" id="B1b-Bb-LoP"/>
                                             <outlet property="deleteButton" destination="3OM-c1-ftI" id="lnW-Zn-L3O"/>
                                             <outlet property="descriptionLabel" destination="4Be-sd-E2T" id="NCV-fD-nE9"/>
-                                            <outlet property="strikeThroughView" destination="4Be-sd-E2T" id="RlH-6r-czZ"/>
                                             <outlet property="strikeThroughWidth" destination="aJm-fv-bdO" id="zWW-4r-jLb"/>
                                         </connections>
                                     </collectionViewCell>
@@ -109,6 +114,7 @@
                                     <constraints>
                                         <constraint firstItem="fo0-ws-HoS" firstAttribute="leading" secondItem="yIa-KR-gt0" secondAttribute="leadingMargin" constant="15.999999999999993" id="3sT-rQ-nK5"/>
                                         <constraint firstItem="fo0-ws-HoS" firstAttribute="centerY" secondItem="yIa-KR-gt0" secondAttribute="centerY" id="FfZ-HB-t0D"/>
+                                        <constraint firstItem="fo0-ws-HoS" firstAttribute="top" secondItem="yIa-KR-gt0" secondAttribute="top" constant="13" id="ciX-JW-SzL"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fo0-ws-HoS" secondAttribute="trailing" constant="20" symbolic="YES" id="dKg-IV-P4m"/>
                                         <constraint firstItem="fo0-ws-HoS" firstAttribute="top" secondItem="yIa-KR-gt0" secondAttribute="topMargin" constant="5" id="wJH-LD-P9H"/>
                                     </constraints>
@@ -130,6 +136,9 @@
                                             <imageReference key="image" image="plus.app" catalog="system" symbolScale="small"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="36" scale="small" weight="light"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addTaskButtonTapped:" destination="Rfq-bh-Gb9" eventType="touchUpInside" id="lfg-DL-c4s"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="할 일을 적어보세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0dh-ET-4ra" userLabel="Input Text field">
                                         <rect key="frame" x="24" y="13" width="214" height="34"/>
@@ -146,6 +155,9 @@
                                         <state key="normal" title="Today">
                                             <color key="titleColor" systemColor="systemGray2Color"/>
                                         </state>
+                                        <connections>
+                                            <action selector="isTodayButtonTapped:" destination="Rfq-bh-Gb9" eventType="touchUpInside" id="6Eb-RF-fdZ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -170,9 +182,20 @@
                     <tabBarItem key="tabBarItem" title="Todo" image="checkmark.circle.fill" catalog="system" id="Jrt-9j-ojk">
                         <color key="badgeColor" systemColor="systemPinkColor"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="addButton" destination="6g2-6o-K80" id="dSv-bc-VFT"/>
+                        <outlet property="collectionView" destination="lzI-xR-lUC" id="UwS-vv-qTh"/>
+                        <outlet property="inputTextField" destination="0dh-ET-4ra" id="6so-N0-4j0"/>
+                        <outlet property="inputViewBottom" destination="ylN-k3-sjN" id="8AT-w6-alV"/>
+                        <outlet property="isTodayButton" destination="XEd-qq-LQM" id="yYw-do-tJH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vxe-KW-caS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="wjh-8e-Yt7"/>
+                <tapGestureRecognizer id="wjh-8e-Yt7">
+                    <connections>
+                        <action selector="tapBG:" destination="Rfq-bh-Gb9" id="egW-Tc-pas"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2087.1999999999998" y="662.807881773399"/>
         </scene>

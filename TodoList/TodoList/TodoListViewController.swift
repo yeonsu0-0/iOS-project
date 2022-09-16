@@ -317,8 +317,7 @@ class TodoListCell: UICollectionViewCell {
     
     // delete 버튼 눌렸을 때 처리 방식: cell은 View 객체이기 때문에 TodoManager이 해당 데이터를 지운 다음에 View에서 업데이트 된 데이터를 다시 불러오는 방법이 좋다!
     
-    @IBAction func deleteButtonTapped(_ sender: Any) {
-        //TODO: deleteButton 처리
+    @IBAction func deleteButtonTapped(_ sender: Any) {        //TODO: deleteButton 처리
         deleteButtonTapHandler?()
     }
 }
