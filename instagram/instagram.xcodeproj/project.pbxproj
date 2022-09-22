@@ -13,6 +13,7 @@
 		2F2E9AA428DB40B00094219D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E9AA228DB40B00094219D /* Main.storyboard */; };
 		2F2E9AA628DB40B20094219D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E9AA528DB40B20094219D /* Assets.xcassets */; };
 		2F2E9AA928DB40B20094219D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2E9AA728DB40B20094219D /* LaunchScreen.storyboard */; };
+		2FC486EF28DCAA710028D122 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC486EE28DCAA710028D122 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2F2E9AA828DB40B20094219D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F2E9AAA28DB40B20094219D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F2E9AB028DB40D40094219D /* SwiftBasic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftBasic.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		2FC486EE28DCAA710028D122 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2F2E9A9E28DB40B00094219D /* SceneDelegate.swift */,
 				2F2E9AA028DB40B00094219D /* ViewController.swift */,
 				2F2E9AA228DB40B00094219D /* Main.storyboard */,
+				2FC486EE28DCAA710028D122 /* LoginViewController.swift */,
 				2F2E9AA528DB40B20094219D /* Assets.xcassets */,
 				2F2E9AA728DB40B20094219D /* LaunchScreen.storyboard */,
 				2F2E9AAA28DB40B20094219D /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FC486EF28DCAA710028D122 /* LoginViewController.swift in Sources */,
 				2F2E9AA128DB40B00094219D /* ViewController.swift in Sources */,
 				2F2E9A9D28DB40B00094219D /* AppDelegate.swift in Sources */,
 				2F2E9A9F28DB40B00094219D /* SceneDelegate.swift in Sources */,
