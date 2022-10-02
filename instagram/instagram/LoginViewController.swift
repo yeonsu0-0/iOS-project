@@ -23,7 +23,6 @@ class LoginViewController: UIViewController {
     @IBAction func emailTextFieldEditingChanged(_ sender: UITextField) {
         let text = sender.text ?? " "   //옵셔널
         self.email = text
-        print(text)
     }
     
     
