@@ -38,9 +38,10 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTextField()
     }
     // =================================================
-
+    
     
     // MARK: - Actions
     // action을 코드로 작성
@@ -65,10 +66,11 @@ class RegisterViewController: UIViewController {
     
     
     // MARK: = Helpers
-
+    
     // textField와 action 연결
     private func setupTextField() {
         
+        /*
          emailTextfield.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
          
          nameTextfield.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
@@ -77,14 +79,14 @@ class RegisterViewController: UIViewController {
          
          passwordTextfield.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
          }
-         
+         */
         
         // 📌 forEach: 위의 긴 코드들을 한 번에 쓸 수 있는 코드
         // 식별된 데이터의 콜렉션으로부터 요구에 따라 뷰를 계산해주는 구조체
-//        textFields.forEach{tf in
-//            tf.addTarget(self,
-//                         action: #selector(textFieldEditingChanged(_:)),
-//                         for: .editingChanged)
-//        }
-        
+        textFields.forEach{tf in
+            tf.addTarget(self,
+                         action: #selector(textFieldEditingChanged(_:)),
+                         for: .editingChanged)
+        }
     }
+}
