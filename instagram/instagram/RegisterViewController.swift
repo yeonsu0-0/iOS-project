@@ -12,10 +12,26 @@ class RegisterViewController: UIViewController {
     // MARK: - Properties
     // 유효성 검사
     // textfield에서 유효한 값이 입력되는 경우 true로 값 변경
-    var isValidEmail = false
-    var isValidName = false
-    var isValidNickname = false
-    var isValidPassword = false
+    var isValidEmail = false {
+        didSet {    // 프로퍼티 감시자
+            self.valdateUserInfo()
+        }
+    }
+    var isValidName = false {
+        didSet {    // 프로퍼티 감시자
+            self.valdateUserInfo()
+        }
+    }
+    var isValidNickname = false {
+        didSet {    // 프로퍼티 감시자
+            self.valdateUserInfo()
+        }
+    }
+    var isValidPassword = false {
+        didSet {    // 프로퍼티 감시자
+            self.valdateUserInfo()
+        }
+    }
     
     // Textfields
     @IBOutlet weak var emailTextfield: UITextField!
@@ -26,6 +42,10 @@ class RegisterViewController: UIViewController {
     var textFields: [UITextField] {
         [emailTextfield, nameTextfield, nicknameTextfield, passwordTextfield]
     }
+    //
+    
+    @IBOutlet weak var signupButton: UIButton!
+    
     
     // MARK: - Lifecycle
     
@@ -51,13 +71,13 @@ class RegisterViewController: UIViewController {
         
         switch sender {
         case emailTextfield:
-            print("email")
+            self.isValidEmail = text.isVaildEmail()
         case nameTextfield:
-            print("name")
+            self.isValidName = text.count > 2
         case nicknameTextfield:
-            print("nickname")
+            self.isValidNickname = text.count > 2
         case passwordTextfield:
-            print("password")
+            self.isValidPassword = text.isValidPassword()
         default:
             fatalError("Missing TextField... :(")
             
@@ -66,7 +86,6 @@ class RegisterViewController: UIViewController {
     
     
     // MARK: = Helpers
-    
     // textField와 action 연결
     private func setupTextField() {
         
@@ -89,4 +108,48 @@ class RegisterViewController: UIViewController {
                          for: .editingChanged)
         }
     }
+    
+    
+    
+    // 사용자의 입력 정보를 확인한 뒤에 UI 업데이트
+    private func valdateUserInfo() {
+        if isValidEmail && isValidName && isValidNickname && isValidPassword {
+            
+            self.signupButton.isEnabled = true
+            UIView.animate(withDuration: 0.33) {
+                self.signupButton.backgroundColor = UIColor.blue
+            }
+        }
+        else {  // 유효성 검사 -> 유효하지 않음
+            self.signupButton.isEnabled = false
+            UIView.animate(withDuration: 0.33) {
+                self.signupButton.backgroundColor = UIColor.lightGray
+            }
+        }
+    }
 }
+
+
+
+// =================================================
+// 📌 정규 표현식
+extension String {
+    
+    // 비밀번호 유효성 검사
+    // 대문자, 소문자, 특수문자, 숫자 있는지 여부와, 8글자 이상일 때 -> true
+    func isValidPassword() -> Bool {
+    let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
+    let passwordValidation = NSPredicate.init(format:"SELF MATCHES %@", regularExpression)
+    
+    return passwordValidation.evaluate(with: self)
+    }
+    
+    // 이메일 유효성 검사
+    //@포함하고 있는지 여부와, 2글자 이상일 때 -> true
+    func isVaildEmail()-> Bool{
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+}
+// =================================================
