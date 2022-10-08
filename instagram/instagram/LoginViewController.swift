@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     // 입력받은 값을 저장할 멤버 변수
     var email = String()
     var password = String()
@@ -16,7 +18,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        // border-radius 속성을 코드로 구현
+        loginButton.layer.cornerRadius = 8
     }
     
     

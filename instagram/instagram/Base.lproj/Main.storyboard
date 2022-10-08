@@ -123,6 +123,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s9G-XU-ERh"/>
+                    <connections>
+                        <outlet property="loginButton" destination="ON0-5O-ruL" id="8qG-aA-C2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,6 +157,11 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="또는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ay-GS-fSA">
                                 <rect key="frame" x="172.66666666666666" y="278" width="30" height="19"/>
@@ -205,13 +213,21 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAH-ry-Rnh">
-                                <rect key="frame" x="16" y="569" width="343" height="38"/>
+                                <rect key="frame" x="16" y="569" width="343" height="42"/>
                                 <color key="backgroundColor" name="disabledButtonColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="KZG-jA-mKU"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemGrayColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="회원가입">
                                     <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                 </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVP-7J-0Ur">
                                 <rect key="frame" x="16" y="739" width="343" height="1"/>
@@ -259,6 +275,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextfield" destination="3nz-iT-pq7" id="lKD-2F-L17"/>
+                        <outlet property="isLoginButton" destination="2ND-vI-GqO" id="euc-8F-NdD"/>
                         <outlet property="nameTextfield" destination="g8W-0E-Pxr" id="Vln-pJ-6WJ"/>
                         <outlet property="nicknameTextfield" destination="N8D-Wt-yuY" id="et3-UU-W4U"/>
                         <outlet property="passwordTextfield" destination="zw2-RN-1js" id="O7s-hR-m8j"/>
