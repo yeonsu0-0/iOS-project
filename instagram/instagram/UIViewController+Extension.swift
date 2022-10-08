@@ -8,6 +8,8 @@
 import UIKit
 
 
+// 하나의 버튼 안에 있는 텍스트 컬러 구분
+
 extension UIViewController{
     func generateButtonAttribute(_ button: UIButton,
                                  texts: String...,

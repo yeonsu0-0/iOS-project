@@ -10,7 +10,8 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     
-    @IBOutlet weak var isLoginButton: UILabel!
+    @IBOutlet weak var isLoginButton: UIButton!
+    
     
     
     // MARK: - Properties
@@ -63,10 +64,31 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
-        
-        setupAttribute()
+        setupAttributes()
     }
     // =================================================
+    
+    
+    private func setupAttributes() {
+        
+        // isLoginButton
+        // 한 label에 있는 텍스트 컬러 다르게 하기
+        
+        let text1 = "계정이 있으신가요?"
+        let text2 = "로그인"
+        
+        let font1 = UIFont.systemFont(ofSize: 18)
+        let font2 = UIFont.boldSystemFont(ofSize: 18)
+        
+        let color1 = UIColor.darkGray
+        let color2 = UIColor.systemPink
+        
+        let attributes = generateButtonAttribute(self.isLoginButton, texts: text1, text2, fonts: font1, font2, colors: color1, color2)
+        
+        
+        self.isLoginButton.setAttributedTitle(attributes, for: .normal)
+    }
+    
     
     
     // MARK: - Actions
@@ -156,26 +178,6 @@ extension String {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
-    }
-    
-    private func setupAttributes() {
-        
-        // isLoginButton
-        // 한 label에 있는 텍스트 컬러 다르게 하기
-        
-        let text1 = "계정이 있으신신가요?"
-        let text2 = "로그인"
-        
-        let font1 = UIFont.systemFont(ofSize: 13)
-        let font2 = UIFont.boldSystemFont(ofSize: 13)
-        
-        let color1 = UIColor.darkGray
-        let color2 = UIColor.systemBlue
-        
-        let attributes = generateButtonAttribute(self.isLoginButton, texts: text1, text2, fonts: font1, font2, colors: color1, color2)
-        
-        
-        self.isLoginButton.setAttributedTitle(attributes, for: .normal)
     }
 
 }
