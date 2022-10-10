@@ -13,6 +13,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var isLoginButton: UIButton!
     
     
+    @IBAction func backButtonDidTapped(_ sender: UIBarButtonItem) {
+        
+        // 뒤로가기
+        self.navigationController?.popViewController(animated: true)
+    }
     
     // MARK: - Properties
     // 유효성 검사
@@ -65,6 +70,10 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         setupTextField()
         setupAttributes()
+        
+        // 버그 수정
+        // 슬라이드로 뒤로가기 구현
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     // =================================================
     
