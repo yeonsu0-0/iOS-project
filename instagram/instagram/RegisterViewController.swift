@@ -9,6 +9,13 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    // MARK: - Properties
+    var email: String = ""
+    var name: String = ""
+    var nickName: String = ""
+    var password: String = ""
+    
+    var userInfo: ((UserInfo)->Void)?   // 클로저
     
     @IBOutlet weak var isLoginButton: UIButton!
     
@@ -18,6 +25,21 @@ class RegisterViewController: UIViewController {
         // 뒤로가기
         self.navigationController?.popViewController(animated: true)
     }
+    
+    
+    // 📌 회원가입 버튼 클릭 시 데이터 넘기기
+    @IBAction func resigterButtonDidTapped(_ sender: Any) {
+        // 뒤로가기
+        self.navigationController?.popViewController(animated: true)
+        
+        // 입력된 회원 정보 데이터 전달
+        let userInfo = UserInfo(email: self.email, name: self.name, nickname: self.nickName, password: self.password)
+        
+        self.userInfo?(userInfo)
+    }
+    
+    
+    
     
     // MARK: - Properties
     // 유효성 검사
@@ -109,12 +131,20 @@ class RegisterViewController: UIViewController {
         switch sender {
         case emailTextfield:
             self.isValidEmail = text.isVaildEmail()
+            self.email = text
+            
         case nameTextfield:
             self.isValidName = text.count > 2
+            self.name = text
+            
+            
         case nicknameTextfield:
             self.isValidNickname = text.count > 2
+            self.nickName = text
+            
         case passwordTextfield:
             self.isValidPassword = text.isValidPassword()
+            self.password = text
         default:
             fatalError("Missing TextField... :(")
             

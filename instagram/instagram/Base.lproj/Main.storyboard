@@ -229,6 +229,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resigterButtonDidTapped:" destination="dcC-iF-3Bx" eventType="touchUpInside" id="Rsn-gE-mm0"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVP-7J-0Ur">
                                 <rect key="frame" x="16" y="698" width="343" height="1"/>

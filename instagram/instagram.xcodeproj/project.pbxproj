@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F04FB3828F5BA4400237F2F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F04FB3728F5BA4400237F2F /* UserInfo.swift */; };
 		2F2E9A9D28DB40B00094219D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E9A9C28DB40B00094219D /* AppDelegate.swift */; };
 		2F2E9A9F28DB40B00094219D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E9A9E28DB40B00094219D /* SceneDelegate.swift */; };
 		2F2E9AA128DB40B00094219D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2E9AA028DB40B00094219D /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F04FB3728F5BA4400237F2F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		2F2E9A9928DB40B00094219D /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2E9A9C28DB40B00094219D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2E9A9E28DB40B00094219D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				2F945D0728DDF00E00E55175 /* RegisterViewController.swift */,
 				2FEBBB9428F1C1C5009D7B6F /* UIView+Extension.swift */,
 				2FEBBB9628F1C4CB009D7B6F /* UIViewController+Extension.swift */,
+				2F04FB3728F5BA4400237F2F /* UserInfo.swift */,
 			);
 			path = instagram;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				2FC486EF28DCAA710028D122 /* LoginViewController.swift in Sources */,
 				2F945D0828DDF00E00E55175 /* RegisterViewController.swift in Sources */,
 				2F2E9AA128DB40B00094219D /* ViewController.swift in Sources */,
+				2F04FB3828F5BA4400237F2F /* UserInfo.swift in Sources */,
 				2FEBBB9728F1C4CB009D7B6F /* UIViewController+Extension.swift in Sources */,
 				2F2E9A9D28DB40B00094219D /* AppDelegate.swift in Sources */,
 				2F2E9A9F28DB40B00094219D /* SceneDelegate.swift in Sources */,

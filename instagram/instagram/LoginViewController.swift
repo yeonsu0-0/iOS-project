@@ -78,5 +78,9 @@ class LoginViewController: UIViewController {
         
         // navigation controller push (embeded in 해서 사용)
         self.navigationController?.pushViewController(registerViewController, animated: true)
+        
+        registerViewController.userInfo = {(userInfo) in
+            print(userInfo)
+        }
     }
 }
