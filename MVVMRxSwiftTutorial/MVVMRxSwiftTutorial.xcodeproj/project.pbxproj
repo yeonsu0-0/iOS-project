@@ -17,6 +17,7 @@
 		F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711A2A467761005B80E1 /* ArticleService.swift */; };
 		F3D2711E2A467E34005B80E1 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711D2A467E34005B80E1 /* RootViewModel.swift */; };
 		F3D271202A468468005B80E1 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */; };
+		F3D271232A4689A9005B80E1 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271222A4689A9005B80E1 /* ArticleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F3D2711A2A467761005B80E1 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		F3D2711D2A467E34005B80E1 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		F3D271222A4689A9005B80E1 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		F5EDB4F59FC984D46CA8B18A /* Pods_MVVMRxSwiftTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRxSwiftTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +88,7 @@
 		F3D270FC2A466D78005B80E1 /* MVVMRxSwiftTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F3D271212A468981005B80E1 /* Views */,
 				F3D2711C2A467E1A005B80E1 /* ViewModels */,
 				F3D271192A46774D005B80E1 /* Services */,
 				F3D271162A4675AB005B80E1 /* Models */,
@@ -130,6 +133,14 @@
 				F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F3D271212A468981005B80E1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3D271222A4689A9005B80E1 /* ArticleCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,6 +261,7 @@
 				F3D2711E2A467E34005B80E1 /* RootViewModel.swift in Sources */,
 				F3D270FE2A466D78005B80E1 /* AppDelegate.swift in Sources */,
 				F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */,
+				F3D271232A4689A9005B80E1 /* ArticleCell.swift in Sources */,
 				F3D271002A466D78005B80E1 /* SceneDelegate.swift in Sources */,
 				F3D271132A466E11005B80E1 /* RootViewController.swift in Sources */,
 				F3D271182A4675BA005B80E1 /* Article.swift in Sources */,
