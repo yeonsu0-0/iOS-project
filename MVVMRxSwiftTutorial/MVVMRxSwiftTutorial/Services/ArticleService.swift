@@ -9,7 +9,11 @@ import Foundation
 import Alamofire
 import RxSwift
 
-class ArticleService {
+protocol ArticleServiceProtocol {
+    func fetchNews() -> Observable<[Article]>
+}
+
+class ArticleService: ArticleServiceProtocol {
     
     // RxSwift는 Swift에서 반응형 프로그래밍을 구현하기 위한 라이브러리로, 옵저버블과 옵저버를 통해 데이터의 흐름과 비동기 작업을 처리할 수 있게 도와줌
     // RxSwift를 이용해서 콜백 지옥에서 벗어나 비동기 처리를 함수의 반환값으로 만들기
