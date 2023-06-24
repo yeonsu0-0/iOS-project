@@ -13,6 +13,7 @@
 		F3D271072A466D7A005B80E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3D271062A466D7A005B80E1 /* Assets.xcassets */; };
 		F3D271132A466E11005B80E1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271122A466E11005B80E1 /* RootViewController.swift */; };
 		F3D271152A466E86005B80E1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271142A466E86005B80E1 /* Coordinator.swift */; };
+		F3D271182A4675BA005B80E1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271172A4675BA005B80E1 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		F3D2710B2A466D7A005B80E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3D271122A466E11005B80E1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F3D271142A466E86005B80E1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F3D271172A4675BA005B80E1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		F5EDB4F59FC984D46CA8B18A /* Pods_MVVMRxSwiftTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRxSwiftTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,7 +56,6 @@
 				540D8C6B885A001BF879B5B2 /* Pods-MVVMRxSwiftTutorial.debug.xcconfig */,
 				25001F2D309129575BBC337F /* Pods-MVVMRxSwiftTutorial.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,6 +80,7 @@
 		F3D270FC2A466D78005B80E1 /* MVVMRxSwiftTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F3D271162A4675AB005B80E1 /* Models */,
 				F3D271112A466DDA005B80E1 /* Controllers */,
 				F3D270FD2A466D78005B80E1 /* AppDelegate.swift */,
 				F3D270FF2A466D78005B80E1 /* SceneDelegate.swift */,
@@ -95,6 +97,14 @@
 				F3D271122A466E11005B80E1 /* RootViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F3D271162A4675AB005B80E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F3D271172A4675BA005B80E1 /* Article.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +224,7 @@
 				F3D270FE2A466D78005B80E1 /* AppDelegate.swift in Sources */,
 				F3D271002A466D78005B80E1 /* SceneDelegate.swift in Sources */,
 				F3D271132A466E11005B80E1 /* RootViewController.swift in Sources */,
+				F3D271182A4675BA005B80E1 /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
