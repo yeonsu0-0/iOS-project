@@ -7,9 +7,26 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 class ArticleService {
     
+    // RxSwift는 Swift에서 반응형 프로그래밍을 구현하기 위한 라이브러리로, 옵저버블과 옵저버를 통해 데이터의 흐름과 비동기 작업을 처리할 수 있게 도와줌
+    // RxSwift를 이용해서 콜백 지옥에서 벗어나 비동기 처리를 함수의 반환값으로 만들기
+    func fetchNews() -> Observable<[Article]> {
+        return Observable.create { (observer) -> Disposable in
+            self.fetchNews{(error, articles) in
+                if let error = error {
+                    observer.onError(error)
+                }
+                if let articles = articles {
+                    observer.onNext(articles)
+                }
+                observer.onCompleted()
+            }
+            return Disposables.create()
+        }
+    }
     
     // error 또는 article을 반환해주는 콜백 함수
     private func fetchNews(completion: @escaping((Error?, [Article]?) -> (Void))) {
