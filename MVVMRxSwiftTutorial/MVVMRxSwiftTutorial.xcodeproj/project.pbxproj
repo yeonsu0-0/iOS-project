@@ -16,6 +16,7 @@
 		F3D271182A4675BA005B80E1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271172A4675BA005B80E1 /* Article.swift */; };
 		F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711A2A467761005B80E1 /* ArticleService.swift */; };
 		F3D2711E2A467E34005B80E1 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711D2A467E34005B80E1 /* RootViewModel.swift */; };
+		F3D271202A468468005B80E1 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F3D271172A4675BA005B80E1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		F3D2711A2A467761005B80E1 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		F3D2711D2A467E34005B80E1 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		F5EDB4F59FC984D46CA8B18A /* Pods_MVVMRxSwiftTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRxSwiftTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D2711D2A467E34005B80E1 /* RootViewModel.swift */,
+				F3D2711F2A468468005B80E1 /* ArticleViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D271152A466E86005B80E1 /* Coordinator.swift in Sources */,
+				F3D271202A468468005B80E1 /* ArticleViewModel.swift in Sources */,
 				F3D2711E2A467E34005B80E1 /* RootViewModel.swift in Sources */,
 				F3D270FE2A466D78005B80E1 /* AppDelegate.swift in Sources */,
 				F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */,
