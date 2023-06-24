@@ -14,6 +14,7 @@
 		F3D271132A466E11005B80E1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271122A466E11005B80E1 /* RootViewController.swift */; };
 		F3D271152A466E86005B80E1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271142A466E86005B80E1 /* Coordinator.swift */; };
 		F3D271182A4675BA005B80E1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D271172A4675BA005B80E1 /* Article.swift */; };
+		F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D2711A2A467761005B80E1 /* ArticleService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F3D271122A466E11005B80E1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		F3D271142A466E86005B80E1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F3D271172A4675BA005B80E1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F3D2711A2A467761005B80E1 /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		F5EDB4F59FC984D46CA8B18A /* Pods_MVVMRxSwiftTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMRxSwiftTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +82,7 @@
 		F3D270FC2A466D78005B80E1 /* MVVMRxSwiftTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F3D271192A46774D005B80E1 /* Services */,
 				F3D271162A4675AB005B80E1 /* Models */,
 				F3D271112A466DDA005B80E1 /* Controllers */,
 				F3D270FD2A466D78005B80E1 /* AppDelegate.swift */,
@@ -105,6 +108,14 @@
 				F3D271172A4675BA005B80E1 /* Article.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3D271192A46774D005B80E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F3D2711A2A467761005B80E1 /* ArticleService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			files = (
 				F3D271152A466E86005B80E1 /* Coordinator.swift in Sources */,
 				F3D270FE2A466D78005B80E1 /* AppDelegate.swift in Sources */,
+				F3D2711B2A467761005B80E1 /* ArticleService.swift in Sources */,
 				F3D271002A466D78005B80E1 /* SceneDelegate.swift in Sources */,
 				F3D271132A466E11005B80E1 /* RootViewController.swift in Sources */,
 				F3D271182A4675BA005B80E1 /* Article.swift in Sources */,
