@@ -1,0 +1,13 @@
+//
+//  Production.xcconfig
+//  TradingCardList+MVVM
+//
+//  Created by yeonsu on 1/6/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// App Settings
+APP_NAME = swiftMVVM Prod
+APP_BUNDLE_ID = enter.bundle.id

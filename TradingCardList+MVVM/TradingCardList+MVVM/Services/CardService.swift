@@ -60,6 +60,7 @@ final class CardService {
                 print(#function, "🧨 Request: \(request)\nError: \(error)")
                 completion(.failure(error))
             }
+            
         }.resume()
     }
 }
